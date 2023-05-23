@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 416007387859.dkr.ecr.eu-west-2.amazonaws.com/docker
+      - aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 416007387859.dkr.ecr.us-east-1.amazonaws.com/docker
 
   build:
     commands:
@@ -14,14 +14,14 @@ phases:
   post_build:
     commands:
       - echo Tagging Java Docker image...
-      - export ECR_URI=416007387859.dkr.ecr.eu-west-2.amazonaws.com/hello
-      - docker tag java:latest 416007387859.dkr.ecr.eu-west-2.amazonaws.com/hello:java
+      - export ECR_URI=416007387859.dkr.ecr.us-east-1.amazonaws.com/ecr
+      - docker tag java:latest 416007387859.dkr.ecr.eu-west-2.amazonaws.com/ecr:java
       - echo Pushing Java Docker image to Amazon ECR...
-      - docker push 416007387859.dkr.ecr.eu-west-2.amazonaws.com/hello:java
+      - docker push 416007387859.dkr.ecr.eu-west-2.amazonaws.com/ecr:java
       - echo Java Docker image pushed successfully.
       - echo Tagging React Docker image...
-      - export ECR_URI=416007387859.dkr.ecr.eu-west-2.amazonaws.com/hello
-      - docker tag react:latest 416007387859.dkr.ecr.eu-west-2.amazonaws.com/hello:react
+      - export ECR_URI=416007387859.dkr.ecr.eu-west-2.amazonaws.com/ecr
+      - docker tag react:latest 416007387859.dkr.ecr.eu-west-2.amazonaws.com/ecr:react
       - echo Pushing React Docker image to Amazon ECR...
-      - docker push 416007387859.dkr.ecr.eu-west-2.amazonaws.com/hello:react
+      - docker push 416007387859.dkr.ecr.eu-west-2.amazonaws.com/ecr:react
       - echo React Docker image pushed successfully.

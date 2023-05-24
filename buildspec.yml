@@ -25,5 +25,15 @@ phases:
       - echo Pushing React Docker image to Amazon ECR...
       - docker push 416007387859.dkr.ecr.us-east-1.amazonaws.com/ecr:react
       - echo React Docker image pushed successfully.
-      - printf '[{"react":"task","416007387859.dkr.ecr.us-east-1.amazonaws.com/ecr:react":"%s"}]' 416007387859.dkr.ecr.us-east-1.amazonaws.com/ecr:react > imagedefinitions.json
-      - printf '[{"java":"task","416007387859.dkr.ecr.us-east-1.amazonaws.com/ecr:java":"%s"}]' 416007387859.dkr.ecr.us-east-1.amazonaws.com/ecr:java > imagedefinitions.json
+
+  artifacts:
+  files:
+    - '**/*'
+  name: react
+  discard-paths: yes
+  secondary-artifacts:
+    react-artifact:
+      files:
+        - 'image-manifest.json'
+      name: react-manifest
+

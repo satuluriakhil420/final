@@ -30,8 +30,4 @@ artifacts:
     - '**/*.jar'
   name: react
   discard-paths: yes
-  my-artifact:
-    artifact-name:
-      files:
-        - 'image-manifest.json'
-      name: react-manifest
+

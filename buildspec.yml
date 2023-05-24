@@ -30,4 +30,3 @@ artifacts:
     - '**/*.jar'
   name: react
   discard-paths: yes
-

@@ -27,13 +27,12 @@ phases:
       - echo React Docker image pushed successfully.
 
   artifacts:
-  files:
-    - '**/*'
-  name: react
-  discard-paths: yes
-  secondary-artifacts:
-    react-artifact:
-      files:
-        - 'image-manifest.json'
-      name: react-manifest
-
+    files:
+      - '**/*'
+    name: your-image-name
+    discard-paths: yes
+    secondary-artifacts:
+      your-artifact-name:
+        files:
+          - 'image-manifest.json'
+        name: your-image-name-manifest

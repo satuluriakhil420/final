@@ -27,7 +27,7 @@ phases:
       - echo React Docker image pushed successfully.
 artifacts:
   files:
-    - '**/*'
+    - '**/*.jar'
   name: react
   discard-paths: yes
   secondary-artifacts:

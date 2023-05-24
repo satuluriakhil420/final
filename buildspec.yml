@@ -27,6 +27,3 @@ phases:
       - echo React Docker image pushed successfully.
       - printf '[{"react":"task","416007387859.dkr.ecr.us-east-1.amazonaws.com/ecr:react":"%s"}]' 416007387859.dkr.ecr.us-east-1.amazonaws.com/ecr:react > imagedefinitions.json
       - printf '[{"java":"task","416007387859.dkr.ecr.us-east-1.amazonaws.com/ecr:java":"%s"}]' 416007387859.dkr.ecr.us-east-1.amazonaws.com/ecr:java > imagedefinitions.json
-
-  artifacts:
-    files: imagedefinitions.json

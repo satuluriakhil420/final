@@ -25,14 +25,13 @@ phases:
       - echo Pushing React Docker image to Amazon ECR...
       - docker push 416007387859.dkr.ecr.us-east-1.amazonaws.com/ecr:react
       - echo React Docker image pushed successfully.
-
-  artifacts:
-    files:
-      - '**/*'
-    name: your-image-name
-    discard-paths: yes
-    secondary-artifacts:
-      your-artifact-name:
-        files:
-          - 'image-manifest.json'
-        name: your-image-name-manifest
+artifacts:
+  files:
+    - '**/*'
+  name: react
+  discard-paths: yes
+  secondary-artifacts:
+    your-artifact-name:
+      files:
+        - 'image-manifest.json'
+      name: react-manifest

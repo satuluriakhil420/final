@@ -30,8 +30,3 @@ artifacts:
     - '**/*.jar'
   name: react
   discard-paths: yes
-  secondary-artifacts:
-    your-artifact-name:
-      files:
-        - 'image-manifest.json'
-      name: react-manifest
